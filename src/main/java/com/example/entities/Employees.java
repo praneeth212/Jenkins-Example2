@@ -15,10 +15,10 @@ public class Employees {
 	private int bid;
 	private List<Employee> empList;
 	
-	public Employees() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
+	// public Employees() {
+	// 	super();
+	// 	// TODO Auto-generated constructor stub
+	// }
 	public Employees(int bid, List<Employee> empList) {
 		super();
 		this.bid = bid;
