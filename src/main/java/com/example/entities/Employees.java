@@ -19,11 +19,11 @@ public class Employees {
 	// 	super();
 	// 	// TODO Auto-generated constructor stub
 	// }
-	public Employees(int bid, List<Employee> empList) {
-		super();
-		this.bid = bid;
-		this.empList = empList;
-	}
+	// public Employees(int bid, List<Employee> empList) {
+	// 	super();
+	// 	this.bid = bid;
+	// 	this.empList = empList;
+	// }
 	@Override
 	public String toString() {
 		return "Employees [bid=" + bid + ", empList=" + empList + "]";
