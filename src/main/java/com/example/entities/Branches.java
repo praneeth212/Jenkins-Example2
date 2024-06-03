@@ -20,10 +20,10 @@ public class Branches {
 	// 	// TODO Auto-generated constructor stub
 	// }
 
-	public Branches(List<Branch> branchList) {
-		super();
-		this.branchList = branchList;
-	}
+	// public Branches(List<Branch> branchList) {
+	// 	super();
+	// 	this.branchList = branchList;
+	// }
 
 	@Override
 	public String toString() {
