@@ -15,10 +15,10 @@ public class Branches {
 	
 	private List<Branch> branchList;
 
-	public Branches() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
+	// public Branches() {
+	// 	super();
+	// 	// TODO Auto-generated constructor stub
+	// }
 
 	public Branches(List<Branch> branchList) {
 		super();
