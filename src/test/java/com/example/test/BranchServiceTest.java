@@ -67,34 +67,34 @@ public class BranchServiceTest {
 			.andExpect(jsonPath("$.branchList[0].branch_name").value("ABC Bank"))
 			.andExpect(jsonPath("$.branchList[1].branch_name").value("DEF Bank"));
 	}
-//	@Test
-//	void testAdd() throws Exception{
-//		ObjectMapper objectMapper = new ObjectMapper();
-//		String teamJson = objectMapper.writeValueAsString(customer1);
-//		mockMvc.perform(post("/customer/add")
-//			.contentType(MediaType.APPLICATION_JSON)
-//			.content(teamJson))
-//			.andExpect(status().isOk());
-//    		verify(customerService).add(customer1);
-//	}
-//	@Test
-//	void testReadOne() throws Exception{
-////		Customers customers = new Customers(Arrays.asList(customer1));
-//		when(customerService.getone(1)).thenReturn(customer1);
-//		mockMvc.perform(get("/customer/getone/1"))
-//			   .andExpect(status().isOk())
-//			   .andExpect(jsonPath("$.address").value("Kadugodi"));
-//	}
-//	@Test
-//	void testUpdate() throws Exception{
-//		ObjectMapper objectMapper = new ObjectMapper();
-//		String customerJson = objectMapper.writeValueAsString(customer1);
-//		mockMvc.perform(put("/customer/update/1")
-//			.contentType(MediaType.APPLICATION_JSON)
-//			.content(customerJson))
-//			.andExpect(status().isOk());
-//		verify(customerService).update(1,customer1);
-//	}
+	@Test
+	void testAdd() throws Exception{
+		ObjectMapper objectMapper = new ObjectMapper();
+		String teamJson = objectMapper.writeValueAsString(branch1);
+		mockMvc.perform(post("/branchservice/Badd")
+			.contentType(MediaType.APPLICATION_JSON)
+			.content(teamJson))
+			.andExpect(status().isOk());
+    		verify(branService).Badd(branch1);
+	}
+	@Test
+	void testReadOne() throws Exception{
+//		Customers customers = new Customers(Arrays.asList(customer1));
+		when(branService.Bgetone(1)).thenReturn(branch1);
+		mockMvc.perform(get("/branchservice/Bgetone/1"))
+			   .andExpect(status().isOk())
+			   .andExpect(jsonPath("$.branch_location").value("ABC Street"));
+	}
+	@Test
+	void testUpdate() throws Exception{
+		ObjectMapper objectMapper = new ObjectMapper();
+		String branchJson = objectMapper.writeValueAsString(branch1);
+		mockMvc.perform(put("/branchservice/Bupdate/1")
+			.contentType(MediaType.APPLICATION_JSON)
+			.content(branchJson))
+			.andExpect(status().isOk());
+		verify(branService).Bupdate(1,branch1);
+	}
 	@Test
 	void testDelete() throws Exception{
 		mockMvc.perform(delete("/branchservice/Bdelete/1"))
