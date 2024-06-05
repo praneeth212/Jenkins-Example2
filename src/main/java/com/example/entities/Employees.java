@@ -6,24 +6,21 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
-@Data
-@ToString
-@AllArgsConstructor
-@NoArgsConstructor
+
 public class Employees {
 	
 	private int bid;
 	private List<Employee> empList;
 	
-	// public Employees() {
-	// 	super();
+	public Employees() {
+	 	super();
 	// 	// TODO Auto-generated constructor stub
-	// }
-	// public Employees(int bid, List<Employee> empList) {
-	// 	super();
-	// 	this.bid = bid;
-	// 	this.empList = empList;
-	// }
+	 }
+	 public Employees(int bid, List<Employee> empList) {
+	 	super();
+	 	this.bid = bid;
+	 	this.empList = empList;
+	 }
 	@Override
 	public String toString() {
 		return "Employees [bid=" + bid + ", empList=" + empList + "]";

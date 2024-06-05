@@ -95,10 +95,10 @@ public class BranchServiceTest {
 //			.andExpect(status().isOk());
 //		verify(customerService).update(1,customer1);
 //	}
-//	@Test
-//	void testDelete() throws Exception{
-//		mockMvc.perform(delete("/customer/delete/1"))
-//			.andExpect(status().isOk());
-//		verify(customerService).delete(1);
-//	}
+	@Test
+	void testDelete() throws Exception{
+		mockMvc.perform(delete("/branchservice/Bdelete/1"))
+			.andExpect(status().isOk());
+		verify(branService).Bdelete(1);
+	}
 }
