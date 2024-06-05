@@ -83,7 +83,7 @@ public class BranchServiceTest {
 		when(branService.Bgetone(1)).thenReturn(branch1);
 		mockMvc.perform(get("/branchservice/Bgetone/1"))
 			   .andExpect(status().isOk())
-			   .andExpect(jsonPath("$.branch_location").value("ABC Street"));
+			   .andExpect(jsonPath("$.branch_location").value("DEF Street"));
 	}
 	@Test
 	void testUpdate() throws Exception{
@@ -93,7 +93,7 @@ public class BranchServiceTest {
 			.contentType(MediaType.APPLICATION_JSON)
 			.content(branchJson))
 			.andExpect(status().isOk());
-		verify(branService).Bupdate(1,branch1);
+		verify(branService).Bupdate(1,branch2);
 	}
 	@Test
 	void testDelete() throws Exception{
