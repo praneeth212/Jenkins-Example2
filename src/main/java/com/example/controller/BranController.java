@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.entities.Branch;
 import com.example.entities.Branches;
 import com.example.repo.BranRepository;
+import com.example.service.BranService;
 
 @RestController
 @RequestMapping("/branchservice")
@@ -21,43 +22,35 @@ import com.example.repo.BranRepository;
 public class BranController {
 	
 	@Autowired
-	BranRepository bran;
-	
+	BranService bran;
 	
 	@GetMapping("/Bgetall")
 	public Branches getAll() {
-		Branches bs = new Branches(bran.findAll());
-		return bs;
+		return bran.getAll();
 	}
 	
 	@CrossOrigin("http://localhost:1563")
 	@GetMapping("/Bgetone/{id}")
 	public Branch Bgetone(@PathVariable int id) {
-		Branch b = bran.findById(id).get();
-		return b;
+		return bran.Bgetone(id);
 	}
 	
 //	@CrossOrigin("http://localhost:1563")
 	@PostMapping("/Badd")
 	public void Badd(@RequestBody Branch b) {
-		bran.save(b);
+		bran.Badd(b);
 	}
 	
 	@CrossOrigin("http://localhost:1563")
 	@PutMapping("/Bupdate/{id}")
 	public Branch Bupdate(@PathVariable int id, @RequestBody Branch bnew) {
-		Branch b = bran.findById(id).get();
-		b.setBranch_name(bnew.getBranch_name());
-		b.setBranch_location(bnew.getBranch_location());
-		b.setBranch_contact(bnew.getBranch_contact());
-		bran.save(b);
-		return b;
+		return bran.Bupdate(id, bnew);
 	}
 	
 	@CrossOrigin("http://localhost:1563")
 	@DeleteMapping("/Bdelete/{id}")
 	public void Bdelete(@PathVariable int id) {
-		bran.deleteById(id);
+		bran.Bdelete(id);
 	}
 	
 
