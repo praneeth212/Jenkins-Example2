@@ -38,7 +38,6 @@ public class BranController {
 //	@CrossOrigin("http://localhost:1563")
 	@PostMapping("/Badd")
 	public void Badd(@RequestBody Branch b) {
-		bran.Badd(b);
 	}
 	
 	@CrossOrigin("http://localhost:1563")
