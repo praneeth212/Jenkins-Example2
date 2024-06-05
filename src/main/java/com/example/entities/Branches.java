@@ -7,10 +7,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
-@Data
-@ToString
-@AllArgsConstructor
-@NoArgsConstructor
 public class Branches {
 	
 	private List<Branch> branchList;
